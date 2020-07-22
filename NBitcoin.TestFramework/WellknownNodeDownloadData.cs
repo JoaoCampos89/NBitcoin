@@ -1343,6 +1343,41 @@ namespace NBitcoin.Tests
 			};
 		}
 
+		public class GhostNodeDownloadData
+		{
+			public NodeDownloadData v0_19_1_6 = new NodeDownloadData()
+			{
+				Version = "0.19.1.6",
+				Windows = new NodeOSDownloadData()
+				{
+					DownloadLink = "https://github.com/ghost-coin/ghost-core/releases/download/v{0}/ghost-{0}-win64.zip",
+					Archive = "ghost-{0}-win64.zip",
+					Executable = "ghost-0.19.1.6/bin/ghostd.exe",
+					Hash = "e99bb7697e37f5ffdf923d6822944e161fa4341459e89d64e5a820d89ab1e27d"
+				},
+				Linux = new NodeOSDownloadData()
+				{
+					DownloadLink = "https://github.com/ghost-coin/ghost-core/releases/download/v{0}/ghost-{0}-x86_64-linux-gnu.tar.gz",
+					Archive = "ghost-{0}-x86_64-linux-gnu.tar.gz",
+					Executable = "ghost-{0}/bin/ghostd",
+					Hash = "472c14123c4b303f6fc7e7bdaa9a7caf41505d9e8f5c49d68e308aba818328f8"
+				},
+				Mac = new NodeOSDownloadData()
+				{
+					DownloadLink = "https://github.com/ghost-coin/ghost-core/releases/download/v{0}/ghost-{0}-osx64.tar.gz",
+					Archive = "ghost-{0}-osx64.tar.gz",
+					Executable = "ghost-{0}/bin/ghostd",
+					Hash = "ce8a4ba332ec4a1229305f50e833720c33253951319880d16b1d4441030119ef"
+				},
+				UseSectionInConfigFile = true,
+			};
+		}
+
+		public static GhostNodeDownloadData Ghost
+		{
+			get; set;
+		} = new GhostNodeDownloadData();
+
 		public static GoByteNodeDownloadData GoByte
 		{
 			get; set;
